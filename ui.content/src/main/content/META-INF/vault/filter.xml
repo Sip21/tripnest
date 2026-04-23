@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/tripnest" mode="merge"/>
+    <filter root="/content/tripnest" mode="merge"/>
+    <filter root="/content/dam/tripnest" mode="merge">
+        <exclude pattern="/content/dam/tripnest(/.*)?"/>
+        <include pattern="/content/dam/tripnest/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/tripnest/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/tripnest" mode="merge"/>
+</workspaceFilter>
