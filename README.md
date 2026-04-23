@@ -1,2 +1,2 @@
 # tripnest
-Initialize with Git
+New project for Travel
