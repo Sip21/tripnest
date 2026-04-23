@@ -3,18 +3,18 @@
     jcr:primaryType="cq:Template">
     <jcr:content
         cq:isDelivered="{Boolean}false"
-        cq:lastModified="{Date}2026-04-23T23:11:00.350+05:30"
+        cq:lastModified="{Date}2026-04-23T20:52:21.399+05:30"
         cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2026-04-23T23:14:01.234+05:30"
-        cq:lastReplicated_publish="{Date}2026-04-23T23:14:01.234+05:30"
+        cq:lastReplicated="{Date}2026-04-23T20:52:26.578+05:30"
+        cq:lastReplicated_publish="{Date}2026-04-23T20:52:26.578+05:30"
         cq:lastReplicatedBy="admin"
         cq:lastReplicatedBy_publish="admin"
         cq:lastReplicationAction="Activate"
         cq:lastReplicationAction_publish="Activate"
-        cq:templateType="/conf/tripnest/settings/wcm/template-types/xf"
-        jcr:description="My Site Experience Fragment Template"
+        cq:templateType="/conf/tripnest/settings/wcm/template-types/page"
+        jcr:description="This is the basic first template for the project."
         jcr:mixinTypes="[cq:ReplicationStatus2]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Web Variation"
+        jcr:title="tripnest-page"
         status="enabled"/>
 </jcr:root>
