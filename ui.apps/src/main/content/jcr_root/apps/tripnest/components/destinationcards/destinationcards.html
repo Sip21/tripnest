@@ -1,0 +1,15 @@
+<sly data-sly-use.model="com.tripnest.core.models.DestinationCardsModel">
+  <div class="destination-grid">
+    
+    <!-- ACTUAL CARDS -->
+    <sly data-sly-list.card="${model.cards}">
+      <div class="card">
+        <h3>${card.title @ context='html'}</h3>
+        <img src="${card.image @ context='uri'}" />
+        <p>${card.description @ context='html'}</p>
+        <a href="${card.link @ context='uri'}">Explore</a>
+      </div>
+    </sly>
+
+  </div>
+</sly>

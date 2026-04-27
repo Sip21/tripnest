@@ -1,0 +1,49 @@
+{
+  "filename": "destinationcards.html",
+  "path": "ui.apps\\src\\main\\content\\jcr_root\\apps\\tripnest\\components\\destinationcards\\destinationcards.html",
+  "version": "1.1",
+  "files": {
+    "056242ea": {
+      "value": [
+        {
+          "programming_language": "HTML",
+          "fileName": "destinationcards.html",
+          "relativeFilePath": "ui.apps/src/main/content/jcr_root/apps/tripnest/components/destinationcards/destinationcards.html",
+          "startLine": [
+            1
+          ],
+          "endLine": [
+            20
+          ]
+        }
+      ]
+    },
+    "4f3531d9": {
+      "value": [
+        {
+          "programming_language": "HTML",
+          "fileName": "destinationcards.html",
+          "relativeFilePath": "ui.apps/src/main/content/jcr_root/apps/tripnest/components/destinationcards/destinationcards.html",
+          "startLine": [
+            1
+          ],
+          "endLine": [
+            22
+          ]
+        }
+      ]
+    }
+  },
+  "promptMessage": {
+    "84f87879": {
+      "value": "whats the issue in this file"
+    },
+    "3ca3c961": {
+      "value": "my values are not displaying on the page"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

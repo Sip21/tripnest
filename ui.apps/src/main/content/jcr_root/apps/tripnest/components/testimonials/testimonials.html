@@ -1,0 +1,20 @@
+<sly data-sly-use.model="com.tripnest.core.models.TestimonialsModel" />
+
+<div class="testimonials">
+
+  <sly data-sly-list.item="${model.testimonialItems}">
+    
+    <div class="card">
+
+      <img src="${item.image @ context='uri'}" 
+           alt="${item.name @ context='text'}" />
+
+      <h3>${item.name @ context='text'}</h3>
+
+      <p>${item.review @ context='text'}</p>
+
+    </div>
+
+  </sly>
+
+</div>

@@ -1,0 +1,13 @@
+<sly data-sly-use.model="com.tripnest.core.models.HeroModel"/>
+
+<div class="hero" style="background-image: url(${model.backgroundImage @ context='uri'})">
+
+  <div class="hero-content">
+    <h1 class="hero-title">${model.heading}</h1>
+    <p class="hero-subtitle">${model.subheading}</p>
+    <a href="${model.ctaLink @ context='uri'}" class="hero-btn">
+      ${model.ctaText}
+    </a>
+  </div>
+
+</div>

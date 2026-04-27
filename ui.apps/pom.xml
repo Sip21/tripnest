@@ -62,6 +62,14 @@
                     </repositoryStructurePackages>
                     <dependencies>
                     </dependencies>
+					
+					  <!-- ✅ Add this block -->
+					<validatorsSettings>
+						<jackrabbit-nodetypes>
+						<defaultSeverity>debug</defaultSeverity>
+						</jackrabbit-nodetypes>
+					</validatorsSettings>
+		
                 </configuration>
             </plugin>
             <plugin>

@@ -1,0 +1,180 @@
+{
+  "ui.apps\\src\\main\\content\\jcr_root\\apps\\tripnest\\components\\destinationcards\\destinationcards.html": {
+    "filename": "destinationcards.html",
+    "path": "ui.apps\\src\\main\\content\\jcr_root\\apps\\tripnest\\components\\destinationcards\\destinationcards.html",
+    "version": "1.2",
+    "contextFile": null,
+    "chunks": {
+      "95a27c": {
+        "user": "Supriya Saddi",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1777301425,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.4.1",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {
+          "promptMessage": "84f87879",
+          "files": "056242ea"
+        },
+        "hash": "344aeedf",
+        "messageId": "system_3ded5ac0-4248-11f1-838c-397366c50d21",
+        "codeBlockId": "system_3ded5ac0-4248-11f1-838c-397366c50d21-Codeblock-7",
+        "isActive": false
+      },
+      "347a4c": {
+        "user": "Supriya Saddi",
+        "model": "claude-sonnet-4@20250514",
+        "timestamp": 1777304347,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.4.1",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {
+          "promptMessage": "3ca3c961",
+          "files": "4f3531d9"
+        },
+        "hash": "cffe4676",
+        "messageId": "system_f6aa6340-424e-11f1-838c-397366c50d21",
+        "codeBlockId": "system_f6aa6340-424e-11f1-838c-397366c50d21-Codeblock-2",
+        "isActive": true
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "347a4c",
+        "hash": "23139201",
+        "encoded": "%3Csly%20data-sly-use.model=%22com.tripnest.core.models.DestinationCardsModel%22%3E",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "347a4c",
+        "hash": "0e6d7dcd",
+        "encoded": "%3Cdiv%20class=%22destination-grid%22%3E",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "347a4c",
+        "hash": "d328014b",
+        "encoded": "%3C!--%20DEBUG%20INFO%20(remove%20after%20testing)%20--%3E",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "347a4c",
+        "hash": "e7071f6c",
+        "encoded": "%3Csly%20data-sly-test=%22$%7Bwcmmode.edit%7D%22%3E",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "347a4c",
+        "hash": "a2d03c40",
+        "encoded": "%3Cdiv%20style=%22border:%202px%20solid%20red;%20padding:%2010px;%20margin:%2010px;%20background:%20#ffe6e6;%22%3E",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "347a4c",
+        "hash": "b7a0d7a9",
+        "encoded": "%3C/div%3E",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "347a4c",
+        "hash": "feafaa55",
+        "encoded": "%3C/sly%3E",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "347a4c",
+        "hash": "a9dc4afa",
+        "encoded": "%3C!--%20EMPTY%20STATE%20--%3E",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "347a4c",
+        "hash": "26075d8b",
+        "encoded": "%3Csly%20data-sly-test=%22$%7Bempty%20model.cards%20&&%20wcmmode.edit%7D%22%3E",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "347a4c",
+        "hash": "35578d85",
+        "encoded": "%3Cdiv%20class=%22cq-placeholder%22%20data-emptytext=%22Destination%20Cards%22%3E%3C/div%3E",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "347a4c",
+        "hash": "e5b5b0a4",
+        "encoded": "%3C/sly%3E",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "347a4c",
+        "hash": "6a549939",
+        "encoded": "%3C!--%20ACTUAL%20CARDS%20--%3E",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "347a4c",
+        "hash": "3ade6fd4",
+        "encoded": "%3Csly%20data-sly-list.card=%22$%7Bmodel.cards%7D%22%3E",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "347a4c",
+        "hash": "587dd1f8",
+        "encoded": "%3Cdiv%20class=%22card%22%3E",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "347a4c",
+        "hash": "2043375a",
+        "encoded": "data-sly-attribute.alt=%22$%7Bcard.title%20%7C%7C%20card.description%20%7C%7C%20'Destination%20image'%7D%22%20/%3E",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "347a4c",
+        "hash": "55c4cd41",
+        "encoded": "%3Ch3%3E$%7Bcard.title%20@%20context='html'%7D%3C/h3%3E",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "347a4c",
+        "hash": "c33f21e0",
+        "encoded": "%3Cp%3E$%7Bcard.description%20@%20context='html'%7D%3C/p%3E",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "347a4c",
+        "hash": "59bd4601",
+        "encoded": "%3Ca%20href=%22$%7Bcard.link%20@%20context='uri'%7D%22%3EExplore%3C/a%3E",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "347a4c",
+        "hash": "a07d9521",
+        "encoded": "%3C/div%3E",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "347a4c",
+        "hash": "c873416c",
+        "encoded": "%3C/sly%3E",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "347a4c",
+        "hash": "ed147d0d",
+        "encoded": "%3C/div%3E",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "347a4c",
+        "hash": "c97fe669",
+        "encoded": "%3C/sly%3E",
+        "prevChunkIds": []
+      }
+    }
+  }
+}
