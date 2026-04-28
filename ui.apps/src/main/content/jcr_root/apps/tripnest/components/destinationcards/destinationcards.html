@@ -2,7 +2,7 @@
   <div class="destination-grid">
     
     <!-- ACTUAL CARDS -->
-    <sly data-sly-list.card="${model.cards}">
+    <sly data-sly-list.card="${model.cards}">  <!-- .cards getting called is the method from model class getCards so when using in HTL we remove get -->
       <div class="card">
         <h3>${card.title @ context='html'}</h3>
         <img src="${card.image @ context='uri'}" />

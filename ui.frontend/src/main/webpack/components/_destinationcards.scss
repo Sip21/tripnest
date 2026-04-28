@@ -1,0 +1,20 @@
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #fff;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /* VERY IMPORTANT */
+}

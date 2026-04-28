@@ -1,0 +1,45 @@
+.testimonials {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 40px 20px
+}
+
+.testimonials .card {
+    background: #fff;
+    border-radius: 9pt;
+    -webkit-box-shadow: 0 4px 9pt rgba(0, 0, 0, .08);
+    box-shadow: 0 4px 9pt rgba(0, 0, 0, .08);
+    padding: 20px;
+    text-align: center;
+    -webkit-transition: -webkit-transform .2s ease;
+    transition: -webkit-transform .2s ease;
+    transition: transform .2s ease;
+    transition: transform .2s ease, -webkit-transform .2s ease
+}
+
+.testimonials .card:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px)
+}
+
+.testimonials .card img {
+    border-radius: 50%;
+    height: 5pc;
+    margin-bottom: 9pt;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 5pc
+}
+
+.testimonials .card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0 5px
+}
+
+.testimonials .card p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5
+}
