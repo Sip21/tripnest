@@ -1,0 +1,27 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='tripnest.card'}"/>
+
+<div class="tripnest-card" data-sly-use.model="com.tripnest.core.models.CardModel">
+
+  <img src="${model.cardImage @ context='uri'}"
+       alt="${model.cardTitle}" />
+
+  <div class="tripnest-card-content">
+
+    <h3 class="tripnest-card-title">
+      ${model.cardTitle}
+    </h3>
+
+    <p class="tripnest-card-description">
+      ${model.cardDescription}
+    </p>
+
+    <a class="tripnest-card-link"
+       href="${model.cardLink @ context='uri'}"
+       target="${model.openInNewTab ? '_blank' : '_self'}">
+       Read More
+    </a>
+
+  </div>
+
+</div>

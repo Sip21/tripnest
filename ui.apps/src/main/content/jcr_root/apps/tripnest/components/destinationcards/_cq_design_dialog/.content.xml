@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Destination Cards Design"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <layout
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="How cards are arranged on the page"
+                                fieldLabel="Card Layout"
+                                name="./layout">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <three
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="{Boolean}true"
+                                        text="3 Columns"
+                                        value="three-col"/>
+                                    <two
+                                        jcr:primaryType="nt:unstructured"
+                                        text="2 Columns"
+                                        value="two-col"/>
+                                    <one
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Full Width List"
+                                        value="list"/>
+                                </items>
+                            </layout>
+                            <maxCards
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldDescription="Leave empty to show all cards"
+                                fieldLabel="Maximum Cards to Show"
+                                max="12"
+                                min="1"
+                                name="./maxCards"/>
+                            <divider
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/field"
+                                renderReadOnly="{Boolean}false"/>
+                            <showImage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}true"
+                                fieldLabel="Show Image"
+                                name="./showImage"
+                                text="Display the card image"
+                                value="{Boolean}true"/>
+                            <showTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}true"
+                                fieldLabel="Show Title"
+                                name="./showTitle"
+                                text="Display the card title"
+                                value="{Boolean}true"/>
+                            <showDescription
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}true"
+                                fieldLabel="Show Description"
+                                name="./showDescription"
+                                text="Display the card description"
+                                value="{Boolean}true"/>
+                            <showLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}true"
+                                fieldLabel="Show Link Button"
+                                name="./showLink"
+                                text="Display the Read More link on each card"
+                                value="{Boolean}true"/>
+                            <linkLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Text shown on the link button on every card"
+                                fieldLabel="Link Button Text"
+                                name="./linkLabel"
+                                value="Read More"/>
+                        </items>
+                    </properties>
+                    <styletab
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="/mnt/overlay/cq/gui/components/authoring/dialog/style/tab_design/styletab"/>
+                </items>
+            </tabs>
+        </items>
+    </content>
+    <_x002e_content.xml.bak/>
+</jcr:root>
