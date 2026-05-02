@@ -35,9 +35,11 @@ public class CardModel {
         if (cardLink == null) {
             return null;
         }
-        if (cardLink != null && cardLink.startsWith("/content")) {
+
+        if (cardLink.startsWith("/content")) {
             return cardLink + ".html";
         }
+
         return cardLink;
     }
 
