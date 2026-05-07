@@ -1,3 +1,4 @@
 {
-    "Slingshot.readFileLineLimit": 3000
+    "Slingshot.readFileLineLimit": 3000,
+    "java.compile.nullAnalysis.mode": "automatic",
 }

@@ -1,0 +1,56 @@
+/* Base container */
+.cmp-text {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Subtitle (your custom field) */
+.cmp-text__subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0073e6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+/* Main text content */
+.cmp-text__content {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Paragraph spacing */
+.cmp-text__content p {
+  margin: 0 0 12px;
+}
+
+/* Headings inside text */
+.cmp-text__content h1,
+.cmp-text__content h2,
+.cmp-text__content h3 {
+  margin: 16px 0 8px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* Links */
+.cmp-text__content a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.cmp-text__content a:hover {
+  text-decoration: underline;
+}
+
+/* Lists */
+.cmp-text__content ul,
+.cmp-text__content ol {
+  margin: 0 0 12px 20px;
+}
+
+/* Italic text (like your example) */
+.cmp-text__content em {
+  color: #444;
+}

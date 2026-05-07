@@ -1,0 +1,32 @@
+<div class="htldemo" data-sly-use.model="com.tripnest.core.models.HtlDemoModel">
+<sly data-sly-use.badgeTpl="_badge.html"/>
+
+
+	<!-- Badge -->
+	<sly data-sly-call="${badgeTpl.badge @ text='NEW'}"/>
+
+    <!-- Title -->
+    <h2 data-sly-test="${model.title}">
+        ${model.title}
+    </h2>
+
+    <!-- Multifield Items -->
+    <ul data-sly-test="${model.items}">
+        <sly data-sly-list.item="${model.items}">
+            <li>${item}</li>
+        </sly>
+    </ul>
+
+    <!-- Link -->
+    <a data-sly-test="${model.linkPath}"
+       href="${model.linkPath}">
+        Read More
+    </a>
+
+    <!-- Footer (conditional) -->
+    <div data-sly-test="${model.showFooter}">
+        <hr/>
+        <p>Footer is enabled</p>
+    </div>
+<sly data-sly-include="_social.html"/>
+</div>
