@@ -1,4 +1,7 @@
 {
     "Slingshot.readFileLineLimit": 3000,
     "java.compile.nullAnalysis.mode": "automatic",
+    "editor.language.colorizedBracketPairs": [
+        
+    ],
 }

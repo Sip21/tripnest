@@ -42,3 +42,76 @@
 .social-links a:hover {
     opacity: 0.85;
 }
+
+.travel-card {
+    position: relative;
+    width: 160px;
+    padding: 18px 20px;
+    border-radius: 14px;
+    overflow: hidden;
+
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.18),
+        0 3px 8px rgba(0, 0, 0, 0.1);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Hover */
+.travel-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 24px rgba(0, 0, 0, 0.22),
+        0 5px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Decorative circle */
+.travel-card::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: -30px;
+
+    width: 100px;
+    height: 100px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+/* Title */
+.travel-card h2 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Optional subtitle */
+.travel-card p {
+    margin-top: 10px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Country tag */
+.travel-card::after {
+    content: "ITALY";
+    position: absolute;
+    bottom: 1px;
+    right: 20px;
+
+    font-size: 5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    background: rgba(255, 255, 255, 0.12);
+    padding: 5px 10px;
+    border-radius: 20px;
+}

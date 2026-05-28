@@ -1,0 +1,61 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Check Java Version",
+			"type": "shell",
+			"command": "\"C:\\Program Files\\Java\\jdk-21\\bin\\java.exe\" -version",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "TripNest Baseline Java 11",
+			"type": "shell",
+			"command": "cmd.exe /c \"cd /d d:\\tripnest && set JAVA_HOME=C:\\Program Files\\Java\\jdk-11 && \"C:\\Program Files (x86)\\apache-maven-3.9.14\\bin\\mvn.cmd\" clean compile test-compile -q && \"C:\\Program Files (x86)\\apache-maven-3.9.14\\bin\\mvn.cmd\" clean test -q\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "TripNest Baseline Java 11",
+			"type": "shell",
+			"command": "cmd.exe /c \"cd /d d:\\tripnest && set \\\"JAVA_HOME=C:\\Program Files\\Java\\jdk-11\\\" && \\\"C:\\Program Files (x86)\\apache-maven-3.9.14\\bin\\mvn.cmd\\\" clean compile test-compile -q && \\\"C:\\Program Files (x86)\\apache-maven-3.9.14\\bin\\mvn.cmd\\\" clean test -q\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Test CMD Quote",
+			"type": "shell",
+			"command": "cmd.exe /c \"set \\\"JAVA_HOME=C:\\Program Files\\Java\\jdk-11\\\" && echo %JAVA_HOME%\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Test CMD Env",
+			"type": "shell",
+			"command": "cmd.exe /c \"set JAVA_HOME=C:\\Program Files\\Java\\jdk-11 && set JAVA_HOME && \\\"C:\\Program Files (x86)\\apache-maven-3.9.14\\bin\\mvn.cmd\\\" -version\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "TripNest Baseline Java 11",
+			"type": "shell",
+			"command": "powershell -NoProfile -Command \"& { $env:JAVA_HOME='C:\\Program Files\\Java\\jdk-11'; Set-Location 'd:\\tripnest'; & 'C:\\Program Files (x86)\\apache-maven-3.9.14\\bin\\mvn.cmd' clean compile test-compile -q; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; & 'C:\\Program Files (x86)\\apache-maven-3.9.14\\bin\\mvn.cmd' clean test -q; exit $LASTEXITCODE }\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Test PowerShell Task",
+			"type": "shell",
+			"command": "powershell -NoProfile -Command \"Write-Output 'TEST'\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "TripNest Baseline Java 11 Run2",
+			"type": "shell",
+			"command": "powershell -NoProfile -Command \"& { $env:JAVA_HOME='C:\\Program Files\\Java\\jdk-11'; Set-Location 'd:\\tripnest'; & 'C:\\Program Files (x86)\\apache-maven-3.9.14\\bin\\mvn.cmd' clean compile test-compile -q; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; & 'C:\\Program Files (x86)\\apache-maven-3.9.14\\bin\\mvn.cmd' clean test -q; exit $LASTEXITCODE }\"",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

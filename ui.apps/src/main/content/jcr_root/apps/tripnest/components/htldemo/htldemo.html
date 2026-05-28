@@ -1,6 +1,13 @@
 <div class="htldemo" data-sly-use.model="com.tripnest.core.models.HtlDemoModel">
 <sly data-sly-use.badgeTpl="_badge.html"/>
+<div data-sly-resource="${'heroimage' @ resourceType='core/wcm/components/image/v3/image'}"></div>
+<div class="travel-card" data-sly-unwrap>
 
+    <h2>Explore Venice</h2>
+
+    <p>Discover canals, culture, and Italian beauty.</p>
+
+</div>
 
 	<!-- Badge -->
 	<sly data-sly-call="${badgeTpl.badge @ text='NEW'}"/>
