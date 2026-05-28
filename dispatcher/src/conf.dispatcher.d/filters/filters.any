@@ -6,8 +6,23 @@
 
 $include "./default_filters.any"
 
-# Allow components JSON model
-/0101 { /type "allow" /extension "json" /selectors "model" /path "/content/*" }
+#Deny Global
+#  /0000 { /glob "*" /type "deny" } 
 
-# Allow manifest.webmanifest files located in the content
-/0102 { /type "allow" /extension "webmanifest" /path "/content/*/manifest" }
+#Allow content pages
+  /0001 { /type "allow" /method "GET" /url "/content/tripnest/*" }
+
+#Allow DAM assets
+  /0002 { /type "allow" /method "GET" /url "/content/dam/*" }
+
+#Allow clientlibs:
+  /0003 { /type "allow" /method "GET" /url "/etc.clientlibs/*" }
+
+#Allow GraphQL:
+  /0004 { /type "allow" /method "GET" /url "/graphql/execute.json/*" }
+
+#BLOCK admin paths (these must never reach Publish):
+# /9001 { /type "deny" /url "/crx/*" }
+# /9002 { /type "deny" /url "/system/*" }
+# /9003 { /type "deny" /url "/apps/*" }
+# /9004 { /type "deny" /url "/libs/*" }
