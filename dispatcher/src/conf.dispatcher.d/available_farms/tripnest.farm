@@ -11,7 +11,7 @@
 	}
 	# hostname globbing for farm selection (virtual domain addressing)
 	/virtualhosts {
-		$include "../virtualhosts/virtualhosts.any"
+		$include "../virtualhosts/tripnest_virtualhosts.any"
 	}
 	# the load will be balanced among these render instances
 	/renders {
@@ -20,7 +20,7 @@
 	# only handle the requests in the following acl. default is 'none'
 	# the glob pattern is matched against the first request line
 	/filter {
-		$include "../filters/filters.any"
+		$include "../filters/tripnest_filters.any"
 	}
 	# if the package is installed on publishers to generate a list of all content with a vanityurl attached
 	# this section will auto-allow the items to bypass the normal dispatcher filters
@@ -57,23 +57,6 @@
 			$include "../cache/rules.any"
 		}
 		
-		/selectors
-		{
-			/0000 "*"
-		}
-
-		/extensions
-		{
-			/0000 "html"
-			/0001 "css"
-			/0002 "js"
-			/0003 "png"
-			/0004 "jpg"
-			/0005 "jpeg"
-			/0006 "gif"
-			/0007 "svg"
-		}
-		
 		# the invalidate section defines those pages which are 'invalidated' after
 		# any activation. please note that, the activated page itself and all 
 		# related documents are flushed on an modification. for example: if the 
@@ -96,7 +79,7 @@
 			}
 		}
 		/allowedClients {
-			$include "../cache/default_invalidate.any"
+			$include "../cache/tripnest_invalidate.any"
 		}
 		# The ignoreUrlParams section contains query string parameter names that
 		# should be ignored when determining whether some request's output can be
@@ -132,6 +115,7 @@
 			"Expires"
 			"Last-Modified"
 			"X-Content-Type-Options"
+			"ETag"
 		}
 		# A grace period defines the number of seconds a stale, auto-invalidated
 		# resource may still be served from the cache after the last activation

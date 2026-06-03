@@ -7,19 +7,19 @@
 $include "./default_filters.any"
 
 #Deny Global
-#  /0000 { /glob "*" /type "deny" } 
+# /1000 { /glob "*" /type "deny" } 
 
 #Allow content pages
-  /0001 { /type "allow" /method "GET" /url "/content/tripnest/*" }
+  /1001 { /type "allow" /method "GET" /url "/content/tripnest/*" }
 
 #Allow DAM assets
-  /0002 { /type "allow" /method "GET" /url "/content/dam/*" }
+  /1002 { /type "allow" /method "GET" /url "/content/dam/*" }
 
 #Allow clientlibs:
-  /0003 { /type "allow" /method "GET" /url "/etc.clientlibs/*" }
+  /1003 { /type "allow" /method "GET" /url "/etc.clientlibs/*" }
 
 #Allow GraphQL:
-  /0004 { /type "allow" /method "GET" /url "/graphql/execute.json/*" }
+  /1004 { /type "allow" /method "GET" /url "/graphql/execute.json/*" }
 
 #BLOCK admin paths (these must never reach Publish):
 # /9001 { /type "deny" /url "/crx/*" }

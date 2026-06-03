@@ -1,0 +1,8 @@
+#
+# This is the default list of virtual hosts (or domain names) that the dispatcher
+# will handle for tripnest website.
+
+
+"localhost"
+"localhost:8080"
+"www.tripnest.com"

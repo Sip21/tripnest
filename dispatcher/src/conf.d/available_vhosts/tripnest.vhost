@@ -3,16 +3,50 @@
 Include conf.d/variables/custom.vars
 
 <VirtualHost *:80>
-	ServerName	"publish"
+	ServerName	"localhost"
 	# Put names of which domains are used for your published site/content here
 	ServerAlias	 "*"
+	ServerAlias *.adobeaemcloud.net
+    ServerAlias *.adobeaemcloud.com
 	# Use a document root that matches the one in conf.dispatcher.d/default.farm
 	DocumentRoot "${DOCROOT}"
 	# URI dereferencing algorithm is applied at Sling's level, do not decode parameters here
 	AllowEncodedSlashes NoDecode
 	# Add header breadcrumbs for help in troubleshooting
 	<IfModule mod_headers.c>
-		Header add X-Vhost "publish"
+		Header add X-Vhost "tripnest"
+		
+		# HTML pages: browser/CDN cache 1 hour
+		<LocationMatch "^/content/tripnest/.*\.html$">
+			Header unset Cache-Control
+			Header unset Expires
+			Header always set Cache-Control "public, max-age=3600, stale-while-revalidate=86400"
+			Header set Age 0
+		</LocationMatch>
+
+		# DAM assets: cache 1 day
+		<LocationMatch "^/content/dam/tripnest/.*\.(png|jpg|jpeg|gif|webp|svg|pdf)$">
+			Header unset Cache-Control
+			Header unset Expires
+			Header always set Cache-Control "public, max-age=86400"
+			Header set Age 0
+		</LocationMatch>
+
+		# JSON: cache 5 minutes
+		<LocationMatch "^/content/tripnest/.*\.json$">
+			Header unset Cache-Control
+			Header unset Expires
+			Header always set Cache-Control "public, max-age=300"
+			Header set Age 0
+		</LocationMatch>
+
+    # Clientlibs: 1 year only if URLs are fingerprinted/versioned
+    <LocationMatch "^/etc.clientlibs/.*\.(css|js|woff2?|ttf|eot|png|jpg|svg)$">
+        Header unset Cache-Control
+        Header unset Expires
+        Header always set Cache-Control "public, max-age=31536000, immutable"
+        Header set Age 0
+    </LocationMatch>
 	</IfModule>
 	<Directory />
 		<IfModule disp_apache2.c>

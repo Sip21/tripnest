@@ -1,2 +1,5 @@
-## Include all of the customers *.farm files
-$include "./*.farm"
+## TripNest farm loads first to match localhost
+
+
+$include "./tripnest.farm"
+$include "./default.farm"
