@@ -1,0 +1,40 @@
+<sly data-sly-use.model="com.tripnest.core.models.PcTitleModel">
+
+    <!-- Title & Description -->
+    <div class="pc-title">
+        <div class="pc-title__row">
+            <span class="pc-title__label">Title</span>
+            <span class="pc-title__value">${model.title}</span>
+        </div>
+        <div class="pc-title__row">
+            <span class="pc-title__label">Description</span>
+            <span class="pc-title__value pc-title__value--desc">${model.description}</span>
+        </div>
+    </div>
+
+    <!-- Fruits -->
+    <div class="pc-fruits">
+        <div class="pc-fruits__title">Fruits</div>
+        <ul class="pc-fruits__list" data-sly-list.item="${model.fruits}">
+            <li>${item}</li>
+        </ul>
+    </div>
+
+    <!-- Resource Info -->
+    <div class="pc-info">
+        <div><span class="pc-info__label">Path:</span>${model.currentPath}</div>
+        <div><span class="pc-info__label">Name:</span>${model.name}</div>
+    </div>
+
+    <!-- Welcome Message -->
+    <div class="pc-welcome">
+        ${model.welcomeMessage}
+    </div>
+
+    <p> 1. ${model.details.path}</p>
+    <p> 2. ${model.details.name}</p>
+    <p> 3. ${model.details.resourceResolver}</p>
+    <p> 4. ${model.details.resourceMetadata}</p>
+    <p> 5. ${model.details.valueMap}</p>
+    <p> 6. ${model.details.resourceType}</p>
+</sly>

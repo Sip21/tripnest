@@ -3,8 +3,8 @@
     jcr:primaryType="nt:file">
     <jcr:content
         cq:isDelivered="{Boolean}false"
-        cq:lastReplicated="{Date}2026-05-26T20:39:13.436+05:30"
-        cq:lastReplicated_publish="{Date}2026-05-26T20:39:13.436+05:30"
+        cq:lastReplicated="{Date}2026-05-28T22:09:41.199+05:30"
+        cq:lastReplicated_publish="{Date}2026-05-28T22:09:41.199+05:30"
         cq:lastReplicatedBy="admin"
         cq:lastReplicatedBy_publish="admin"
         cq:lastReplicationAction="Activate"
