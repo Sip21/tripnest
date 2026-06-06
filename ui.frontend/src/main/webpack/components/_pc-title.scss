@@ -1,0 +1,111 @@
+/* ── pc-title component ── */
+
+.pc-title {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #2d7d6f;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pc-title__row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.pc-title__row:last-child {
+    border-bottom: none;
+}
+
+.pc-title__label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #2d7d6f;
+    min-width: 90px;
+}
+
+.pc-title__value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.pc-title__value--desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: #555e6d;
+}
+
+/* fruits list */
+.pc-fruits {
+    margin-top: 16px;
+    padding: 16px;
+    background: #f8fffe;
+    border-radius: 8px;
+    border: 1px solid #e0f0ed;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.pc-fruits__title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #2d7d6f;
+    margin-bottom: 10px;
+}
+
+.pc-fruits__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pc-fruits__list li {
+    background: #2d7d6f;
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* info section */
+.pc-info {
+    margin-top: 16px;
+    padding: 16px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+    color: #444;
+    line-height: 1.8;
+}
+
+.pc-info__label {
+    font-weight: 600;
+    color: #2d7d6f;
+    margin-right: 6px;
+}
+
+/* welcome message */
+.pc-welcome {
+    margin-top: 16px;
+    padding: 14px 20px;
+    background: #2d7d6f;
+    color: #ffffff;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
