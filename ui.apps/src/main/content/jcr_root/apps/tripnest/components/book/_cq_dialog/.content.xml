@@ -37,6 +37,16 @@
                                             </items>
                                         </field>
                                     </multi>
+                                    <firstname
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="First Name"
+                                        name="./firstName"/>
+                                    <lastname
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Last Name"
+                                        name="./lastName"/>
                                 </items>
                             </column>
                         </items>

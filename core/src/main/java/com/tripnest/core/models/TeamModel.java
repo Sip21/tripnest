@@ -10,15 +10,8 @@ import java.util.List;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class TeamModel {
 
-    @ValueMapValue
-    private String team;
-
     @ChildResource
     private List<EmployeeModel> employees;
-
-    public String getTeam() {
-        return team;
-    }
 
     public List<EmployeeModel> getEmployees() {
         return employees;
