@@ -1,5 +1,16 @@
 <sly data-sly-use.model="com.tripnest.core.models.BookModel">
 
-<ul data-sly-list.item="${model.books}">
-<li>${item}</li>
-</ul>
+    <ul data-sly-list.item="${model.books}">
+        <li>${item}</li>
+    </ul>
+
+    <p>Here it is for: ${model.copyright}</p>
+
+    <p>Here :::: ${model.contentPath}</p>
+    <p>Count here: ${model.childrenCount} </p>
+
+    <p>URI: ${model.requestUri}</p>
+    <p>Selectors: ${model.selectors}</p>
+    <p>Extension: ${model.extension}</p>
+    
+    <p>Formatted Name: ${model.formattedName}</p>

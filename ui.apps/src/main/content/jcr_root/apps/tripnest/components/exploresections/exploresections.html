@@ -1,12 +1,10 @@
 <sly data-sly-use.model="com.tripnest.core.models.ExploreSectionsModel">
 
     <sly data-sly-list.item="${model.panels}">
-        
-        <details
-            class="exploresections"
-            data-sly-test="${item.panelTitle}"
+
+        <details class="exploresections" data-sly-test="${item.panelTitle}"
             data-sly-attribute.open="${item.defaultOpen}">
-            
+
             <summary class="exploresections__title">
                 ${item.panelTitle}
             </summary>
