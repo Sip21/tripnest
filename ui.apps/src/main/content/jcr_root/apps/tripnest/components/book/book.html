@@ -1,16 +1,22 @@
 <sly data-sly-use.model="com.tripnest.core.models.BookModel">
+    <sly data-sly-use.resourceModel="com.tripnest.core.models.ResourceApiModel">
+        <sly data-sly-use.testModel="com.tripnest.core.models.TestModel">
 
-    <ul data-sly-list.item="${model.books}">
-        <li>${item}</li>
-    </ul>
+            <ul data-sly-list.item="${model.books}">
+                <li>${item}</li>
+            </ul>
 
-    <p>Here it is for: ${model.copyright}</p>
+            <p>Here it is for: ${model.copyright}</p>
 
-    <p>Here :::: ${model.contentPath}</p>
-    <p>Count here: ${model.childrenCount} </p>
+            <p>Here :::: ${model.contentPath}</p>
+            <p>Count here: ${model.childrenCount} </p>
 
-    <p>URI: ${model.requestUri}</p>
-    <p>Selectors: ${model.selectors}</p>
-    <p>Extension: ${model.extension}</p>
-    
-    <p>Formatted Name: ${model.formattedName}</p>
+            <p>URI: ${model.requestUri}</p>
+            <p>Selectors: ${model.selectors}</p>
+            <p>Extension: ${model.extension}</p>
+
+            <p>Formatted Name: ${model.formattedName}</p>
+
+            <p>Count for ChildPages is ::: ${resourceModel.childNodes}</p>
+
+            <p>Page exist or not ?? ::: ${testModel.path}</p>
