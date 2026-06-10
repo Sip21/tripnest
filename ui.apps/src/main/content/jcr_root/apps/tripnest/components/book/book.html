@@ -1,6 +1,7 @@
 <sly data-sly-use.model="com.tripnest.core.models.BookModel">
     <sly data-sly-use.resourceModel="com.tripnest.core.models.ResourceApiModel">
-        <sly data-sly-use.testModel="com.tripnest.core.models.TestModel">
+        <sly data-sly-use.testModel="com.tripnest.core.models.TestModel"> 
+        <sly data-sly-use.siteModel="com.tripnest.core.models.SiteNameModel"> 
 
             <ul data-sly-list.item="${model.books}">
                 <li>${item}</li>
@@ -20,3 +21,6 @@
             <p>Count for ChildPages is ::: ${resourceModel.childNodes}</p>
 
             <p>Page exist or not ?? ::: ${testModel.path}</p>
+            <p>Page Title ::: ${testModel.pageTitle @ context='html'}</p>
+
+            <p>Message ::: ${siteModel.welcomeMessage @ context='html'}</p>
