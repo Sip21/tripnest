@@ -43,7 +43,6 @@
                         </goals>
                         <configuration>
                             <bnd><![CDATA[
-                            Bundle-SymbolicName: com.tripnest.core 
 Import-Package: javax.annotation;version=0.0.0,*
                                 ]]></bnd>
                         </configuration>
