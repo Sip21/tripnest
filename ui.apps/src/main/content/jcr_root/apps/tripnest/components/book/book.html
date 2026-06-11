@@ -3,27 +3,34 @@
         <sly data-sly-use.testModel="com.tripnest.core.models.TestModel">
             <sly data-sly-use.siteModel="com.tripnest.core.models.SiteNameModel">
                 <sly data-sly-use.copyrightModel="com.tripnest.core.models.CopyrightModel">
+                    <sly data-sly-use.multiModel="com.tripnest.core.models.MultipleValueModel">
+                        <sly data-sly-use.toggleModel="com.tripnest.core.models.FeatureToggleModel"></sly>
 
-                    <ul data-sly-list.item="${model.books}">
-                        <li>${item}</li>
-                    </ul>
+                        <ul data-sly-list.item="${model.books}">
+                            <li>${item}</li>
+                        </ul>
 
-                    <p>Here it is for: ${model.copyright}</p>
+                        <p>Here it is for: ${model.copyright}</p>
 
-                    <p>Here :::: ${model.contentPath}</p>
-                    <p>Count here: ${model.childrenCount} </p>
+                        <p>Here :::: ${model.contentPath}</p>
+                        <p>Count here: ${model.childrenCount} </p>
 
-                    <p>URI: ${model.requestUri}</p>
-                    <p>Selectors: ${model.selectors}</p>
-                    <p>Extension: ${model.extension}</p>
+                        <p>URI: ${model.requestUri}</p>
+                        <p>Selectors: ${model.selectors}</p>
+                        <p>Extension: ${model.extension}</p>
 
-                    <p>Formatted Name: ${model.formattedName}</p>
+                        <p>Formatted Name: ${model.formattedName}</p>
 
-                    <p>Count for ChildPages is ::: ${resourceModel.childNodes}</p>
+                        <p>Count for ChildPages is ::: ${resourceModel.childNodes}</p>
 
-                    <p>Page exist or not ?? ::: ${testModel.path}</p>
-                    <p>Page Title ::: ${testModel.pageTitle @ context='html'}</p>
+                        <p>Page exist or not ?? ::: ${testModel.path}</p>
+                        <p>Page Title ::: ${testModel.pageTitle @ context='html'}</p>
 
-                    <p>Message ::: ${siteModel.welcomeMessage @ context='html'}</p>
+                        <p>Message ::: ${siteModel.welcomeMessage @ context='html'}</p>
 
-                    <p>Copyright Detail here >>:::>> ${copyrightModel.footerText @ context='html'}</p>
+                        <p>Copyright Detail here >>:::>> ${copyrightModel.footerText @ context='html'}</p>
+
+                        <p>Multiple Values for Configuration here >>:::>> ${multiModel.multipleValue @ context='html'}
+                        </p>
+                        <p>Discount Tab Flag >>:::>> ${toggleModel.discountFlag}
+                        </p>
