@@ -1,5 +1,7 @@
 package com.tripnest.core.schedulers;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import org.apache.sling.commons.scheduler.ScheduleOptions;
 import org.apache.sling.commons.scheduler.Scheduler;
 import org.osgi.service.component.annotations.Activate;
@@ -11,49 +13,48 @@ import org.osgi.service.metatype.annotations.Designate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.tripnest.core.config.ConfigurableSchedulerConfig;
+import com.tripnest.core.config.CounterConfig;
 
-//connect to config
 @Component(immediate = true)
-@Designate(ocd = ConfigurableSchedulerConfig.class)
-public class ConfigurableScheduler implements Runnable {
+@Designate(ocd = CounterConfig.class)
+public class CounterScheduler implements Runnable {
+    private static final Logger LOG = LoggerFactory.getLogger(CounterScheduler.class);
 
-    // Add Log
-    private static final Logger LOG = LoggerFactory.getLogger(ConfigurableScheduler.class);
+    private static final String SCHEDULER_ID = "CounterScheduler";
 
-    // Give this scheduler a name
-    private static final String SCHEDULER_ID = "ConfigurableScheduler";
-
-    // call scheduler via reference
     @Reference
     private Scheduler scheduler;
 
-    // add parameters here
-    private boolean enabledFlag;
+    private boolean enableFlag;
     private String cronExpression;
+    private final AtomicInteger counter = new AtomicInteger();
 
-    // First we have activate method
     @Activate
     @Modified
-    protected void activate(ConfigurableSchedulerConfig config) {
-        this.enabledFlag = config.enabledFlag();
+    protected void activate(CounterConfig config) {
+        this.enableFlag = config.enableFlag();
         this.cronExpression = config.cronExpression();
 
-        // remove scheduler
-        removeScheduler();
+        // reset counter on config change
+        counter.set(0);
 
-        if (enabledFlag) {
+        removeScheduler();
+        if (enableFlag) {
             // addScheduler();
         } else {
-            LOG.info("ConfigurableScheduler is disabled, not scheduling.");
+            LOG.info("CounterScheduler is disabled.");
         }
 
     }
 
-    // Now we have Deactivate Method
     @Deactivate
     protected void deactivate() {
         removeScheduler();
+    }
+
+    private void removeScheduler() {
+        LOG.info("*****CounterScheduler removed successfully****");
+        scheduler.unschedule(SCHEDULER_ID);
     }
 
     private void addScheduler() {
@@ -61,17 +62,14 @@ public class ConfigurableScheduler implements Runnable {
         options.name(SCHEDULER_ID);
         options.canRunConcurrently(false);
         scheduler.schedule(this, options);
-        LOG.info("ConfigurableScheduler added with cron: {}", cronExpression);
-    }
-
-    private void removeScheduler() {
-        scheduler.unschedule(SCHEDULER_ID);
-        LOG.info("Configurable Scheduler removed successfully");
+        LOG.info("****CounterScheduler added successfully****");
     }
 
     @Override
     public void run() {
-        LOG.info("Configurable Scheduler is running.");
+        int current = counter.incrementAndGet();
+        LOG.info("****CounterScheduler running successfully****");
+        LOG.info("Counter = {}", current);
     }
 
 }

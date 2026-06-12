@@ -11,67 +11,69 @@ import org.osgi.service.metatype.annotations.Designate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.tripnest.core.config.ConfigurableSchedulerConfig;
+import com.tripnest.core.config.GreetingConfig;
+import com.tripnest.core.services.GreetingService;
 
-//connect to config
-@Component(immediate = true)
-@Designate(ocd = ConfigurableSchedulerConfig.class)
-public class ConfigurableScheduler implements Runnable {
+@Component(service = GreetingScheduler.class, immediate = true)
+@Designate(ocd = GreetingConfig.class)
+public class GreetingScheduler implements Runnable {
 
-    // Add Log
-    private static final Logger LOG = LoggerFactory.getLogger(ConfigurableScheduler.class);
+    private static final Logger LOG = LoggerFactory.getLogger(GreetingScheduler.class);
 
-    // Give this scheduler a name
-    private static final String SCHEDULER_ID = "ConfigurableScheduler";
+    private static final String SCHEDULE_ID = "GreetingScheduler";
 
-    // call scheduler via reference
     @Reference
     private Scheduler scheduler;
 
-    // add parameters here
+    @Reference
+    private GreetingService service;
+
     private boolean enabledFlag;
     private String cronExpression;
 
-    // First we have activate method
     @Activate
     @Modified
-    protected void activate(ConfigurableSchedulerConfig config) {
-        this.enabledFlag = config.enabledFlag();
+    protected void activate(GreetingConfig config) {
+        LOG.info("***GreetingScheduler activated***");
+        this.enabledFlag = config.enableFlag();
         this.cronExpression = config.cronExpression();
 
-        // remove scheduler
         removeScheduler();
-
         if (enabledFlag) {
             // addScheduler();
         } else {
-            LOG.info("ConfigurableScheduler is disabled, not scheduling.");
+            LOG.info("***GreetingScheduler DISABLED***");
         }
-
     }
 
-    // Now we have Deactivate Method
     @Deactivate
     protected void deactivate() {
         removeScheduler();
+        LOG.info("***GreetingScheduler deactivated***");
     }
 
     private void addScheduler() {
         ScheduleOptions options = scheduler.EXPR(cronExpression);
-        options.name(SCHEDULER_ID);
+        options.name(SCHEDULE_ID);
         options.canRunConcurrently(false);
         scheduler.schedule(this, options);
-        LOG.info("ConfigurableScheduler added with cron: {}", cronExpression);
+        LOG.info("***GreetingScheduler added successfully***");
     }
 
     private void removeScheduler() {
-        scheduler.unschedule(SCHEDULER_ID);
-        LOG.info("Configurable Scheduler removed successfully");
+        scheduler.unschedule(SCHEDULE_ID);
+        LOG.info("***GreetingScheduler removed successfully***");
     }
 
     @Override
     public void run() {
-        LOG.info("Configurable Scheduler is running.");
+        if (service != null) {
+            LOG.info("Greeting: {}", service.getGreeting()); // ← correct pattern
+            LOG.info("***GreetingScheduler running***");
+        } else {
+            LOG.error("*** GreetingService is NULL ****");
+        }
+
     }
 
 }

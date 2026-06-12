@@ -10,6 +10,9 @@ import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.tripnest.core.services.PassDataService;
+import com.tripnest.core.services.TestEventService;
+
 @Component(immediate = true)
 public class HelloScheduler implements Runnable {
 
@@ -20,11 +23,17 @@ public class HelloScheduler implements Runnable {
     @Reference
     private Scheduler scheduler;
 
+    @Reference
+    private TestEventService testEventService;
+
+    @Reference
+    private PassDataService passDataService;
+
     @Activate
     @Modified
     protected void activate() {
         removeScheduler();
-        // addScheduler();
+        addScheduler();
     }
 
     @Deactivate
@@ -48,6 +57,8 @@ public class HelloScheduler implements Runnable {
     @Override
     public void run() {
         LOG.info("Hello Scheduler");
+        // testEventService.fireEvent();
+        passDataService.getName("Supriya");
     }
 
 }

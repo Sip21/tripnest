@@ -1,0 +1,5 @@
+{
+    "enabledFlag": true,
+    "cronExpression": "0/10 * * * * ?",
+    "path": "/content/tripnest/us/en"
+}

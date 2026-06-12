@@ -1,0 +1,4 @@
+{
+    "enableFlag": true,
+    "cronExpression": "0/15 * * * * ?"
+}
