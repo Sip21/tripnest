@@ -46,7 +46,7 @@ public class PageCheckScheduler implements Runnable {
 
         removeScheduler();
         if (enabledFlag) {
-            addScheduler();
+            // addScheduler();
         } else {
             LOG.info("***PageCheckScheduler DISABLED successfully***");
         }
