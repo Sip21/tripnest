@@ -60,10 +60,10 @@ public class HelloScheduler implements Runnable {
 
     @Override
     public void run() {
-        LOG.info("Hello Scheduler");
+        // LOG.info("Hello Scheduler");
         // testEventService.fireEvent();
         // passDataService.getName("Supriya");
-        helloService.publishMessage("Hello");
+        // helloService.publishMessage("Hello");
 
     }
 
