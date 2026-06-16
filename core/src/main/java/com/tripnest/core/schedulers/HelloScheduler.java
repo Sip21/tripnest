@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import com.tripnest.core.services.HelloService;
 import com.tripnest.core.services.PassDataService;
+import com.tripnest.core.services.SimpleService;
 import com.tripnest.core.services.TestEventService;
 
 @Component(immediate = true)
@@ -32,6 +33,9 @@ public class HelloScheduler implements Runnable {
 
     @Reference
     private HelloService helloService;
+
+    @Reference
+    private SimpleService simpleService;
 
     @Activate
     @Modified
@@ -64,7 +68,7 @@ public class HelloScheduler implements Runnable {
         // testEventService.fireEvent();
         // passDataService.getName("Supriya");
         // helloService.publishMessage("Hello");
-
+        simpleService.fireAuditEvent();
     }
 
 }

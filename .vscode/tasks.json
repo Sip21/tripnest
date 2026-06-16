@@ -62,7 +62,11 @@
 			"type": "shell",
 			"command": "powershell -NoProfile -Command \"& { $env:JAVA_HOME='C:\\Program Files\\Java\\jdk-11'; Set-Location 'd:\\tripnest'; & 'C:\\Program Files (x86)\\apache-maven-3.9.14\\bin\\mvn.cmd' -e clean compile test-compile; exit $LASTEXITCODE }\"",
 			"isBackground": false,
-			"problemMatcher": []
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
 		},
 		{
 			"label": "TripNest Java 21 Compile Check",
