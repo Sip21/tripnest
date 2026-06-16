@@ -1,0 +1,14 @@
+<sly data-sly-use.booklistModel="com.tripnest.core.models.BookListModel"></sly>
+<sly data-sly-use.titleRModel="com.tripnest.core.models.CheckTitleRModel"></sly>
+<sly data-sly-use.countryModel="com.tripnest.core.models.CountryModel"></sly>
+<sly data-sly-use.titleSlingRModel="com.tripnest.core.models.CheckTitleSlingModel"></sly>
+
+<ul data-sly-list.item="${booklistModel.bookList}">
+    <li>${item.bookName} - ${item.author} - ${item.price}</li>
+</ul>
+
+<p>Title: ${titleRModel.title}</p>
+
+<p>Message: ${countryModel.Message}</p>
+
+<p>Title from SlingHttpModel: ${titleSlingRModel.Title}</p>

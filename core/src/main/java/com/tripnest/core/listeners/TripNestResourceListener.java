@@ -24,17 +24,17 @@ public class TripNestResourceListener implements ResourceChangeListener {
     public void onChange(List<ResourceChange> changes) {
         for (ResourceChange change : changes) {
             switch (change.getType()) {
-                case ADDED:
-                    LOG.info("*** Page Added: {} ***", change.getPath());
-                    break;
-                case CHANGED:
-                    LOG.info("*** Resource Changed: {} ***", change.getPath());
-                    break;
-                case REMOVED:
-                    LOG.info("*** Resource Removed: {} ***", change.getPath());
-                    break;
-                default:
-                    LOG.info("*** Unknown change at: {} ***", change.getPath());
+                // case ADDED:
+                // LOG.info("*** Page Added: {} ***", change.getPath());
+                // break;
+                // case CHANGED:
+                // LOG.info("*** Resource Changed: {} ***", change.getPath());
+                // break;
+                // case REMOVED:
+                // LOG.info("*** Resource Removed: {} ***", change.getPath());
+                // break;
+                // default:
+                // LOG.info("*** Unknown change at: {} ***", change.getPath());
             }
         }
 
