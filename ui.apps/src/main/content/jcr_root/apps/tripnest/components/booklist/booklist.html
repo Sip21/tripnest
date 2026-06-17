@@ -2,6 +2,11 @@
 <sly data-sly-use.titleRModel="com.tripnest.core.models.CheckTitleRModel"></sly>
 <sly data-sly-use.countryModel="com.tripnest.core.models.CountryModel"></sly>
 <sly data-sly-use.titleSlingRModel="com.tripnest.core.models.CheckTitleSlingModel"></sly>
+<sly data-sly-use.pageSearchModel="com.tripnest.core.models.PageSearchModel"></sly>
+<sly data-sly-use.queryModel="com.tripnest.core.models.PageTitleQueryModel"></sly>
+<sly data-sly-use.modifiedModel="com.tripnest.core.models.ModifiedPageModel"></sly>
+<sly data-sly-use.tagModel="com.tripnest.core.models.TagModel"></sly>
+<sly data-sly-use.auditQueryModel="com.tripnest.core.models.AuditQueryModel"></sly>
 
 <ul data-sly-list.item="${booklistModel.bookList}">
     <li>${item.bookName} - ${item.author} - ${item.price}</li>
@@ -12,3 +17,28 @@
 <p>Message: ${countryModel.Message}</p>
 
 <p>Title from SlingHttpModel: ${titleSlingRModel.Title}</p>
+
+<ul data-sly-list.item="${pageSearchModel.pagePaths}">
+    <li>Page Path :: ${item}</li>
+</ul>
+
+<ul data-sly-list.item="${queryModel.pageByTitle}">
+    <li>Page Path for the specific Title :: ${item}</li>
+</ul>
+
+<ul data-sly-list.item="${modifiedModel.pagePaths}">
+    <li>
+        Path: ${item.path} |
+        Modified: ${item.modifiedDate}
+    </li>
+</ul>
+
+<ul data-sly-list.item="${tagModel.pagesWithTag}">
+    <li>Pages with Tag :: ${item}</li>
+</ul>
+
+<ul data-sly-list.item="${auditQueryModel.pageDetails}">
+    <li>Page Path:: ${item.path}</li>
+    <li>Page Modified Date:: ${item.modifiedDate}</li>
+    <li>Page Modified By:: ${item.modifiedBy}</li>
+</ul>
