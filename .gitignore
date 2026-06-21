@@ -1,4 +1,4 @@
-# Created by https://www.gitignore.io/api/eclipse,java,maven
+# Created by https://www.gitignore.io/api/eclipse,java,maven,vscode
 
 ### Eclipse ###
 *.pydevproject
@@ -16,6 +16,9 @@ local.properties
 
 # Eclipse Core
 .project
+
+#VisualStudio
+.vscode/
 
 # External tool builders
 .externalToolBuilders/
