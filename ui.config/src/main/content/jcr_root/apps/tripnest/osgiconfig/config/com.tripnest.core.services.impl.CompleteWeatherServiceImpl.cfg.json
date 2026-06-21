@@ -1,0 +1,3 @@
+{
+    "schedulerExpression": "0/10 * * * * ?"
+}
