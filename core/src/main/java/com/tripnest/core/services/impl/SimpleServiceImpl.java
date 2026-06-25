@@ -29,9 +29,9 @@ public class SimpleServiceImpl implements SimpleService {
         properties.put("action", "created page");
 
         Event event = new Event(EVENT_TOPIC, properties);
-        LOG.info("*** Before sendEvent ***");
+        // LOG.info("*** Before sendEvent ***");
         eventAdmin.sendEvent(event);
-        LOG.info("*** SimpleServiceImpl called ***");
+        // LOG.info("*** SimpleServiceImpl called ***");
     }
 
 }
