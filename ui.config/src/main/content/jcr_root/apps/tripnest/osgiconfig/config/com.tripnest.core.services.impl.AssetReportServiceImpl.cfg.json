@@ -1,0 +1,4 @@
+{
+    "scheduler_expression": "0/10 * * * * ?",
+    "enabled": "true"
+}
