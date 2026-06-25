@@ -10,29 +10,21 @@ import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tripnest.core.models.WeatherNewPOJO;
-import com.tripnest.core.models.WeatherPOJO;
-import com.tripnest.core.services.CompleteWeatherService;
+import com.tripnest.core.services.AssetService;
 
 @Component(service = Servlet.class, property = {
-        "sling.servlet.paths=/bin/assetreport",
+        "sling.servlet.paths=/bin/assetinfo",
         "sling.servlet.methods=GET"
 })
-public class CompleteWeatherServlet extends SlingSafeMethodsServlet {
+public class AssetInfoServlet extends SlingSafeMethodsServlet {
 
     @Reference
-    private CompleteWeatherService weatherService;
+    private AssetService assetService;
 
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws IOException {
 
-        WeatherNewPOJO weather = weatherService.getLatestWeather();
-
-        ObjectMapper mapper = new ObjectMapper();
-
-        response.setContentType("application/json");
-
-        response.getWriter().write(mapper.writeValueAsString(weather));
+        assetService.printAssetDetails("/content/dam/tripnest/pdf/Travel Brochure Example Blank.pdf");
+        response.getWriter().write("Asset details printed in logs");
     }
 }

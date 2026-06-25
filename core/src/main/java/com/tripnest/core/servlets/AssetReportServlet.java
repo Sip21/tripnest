@@ -7,32 +7,26 @@ import javax.servlet.Servlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.apache.sling.servlets.annotations.SlingServletPaths;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tripnest.core.models.WeatherNewPOJO;
-import com.tripnest.core.models.WeatherPOJO;
-import com.tripnest.core.services.CompleteWeatherService;
+import com.tripnest.core.services.AssetReportService;
 
 @Component(service = Servlet.class, property = {
         "sling.servlet.paths=/bin/assetreport",
         "sling.servlet.methods=GET"
 })
-public class CompleteWeatherServlet extends SlingSafeMethodsServlet {
+public class AssetReportServlet extends SlingSafeMethodsServlet {
 
     @Reference
-    private CompleteWeatherService weatherService;
+    private AssetReportService service;
 
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws IOException {
 
-        WeatherNewPOJO weather = weatherService.getLatestWeather();
-
-        ObjectMapper mapper = new ObjectMapper();
-
-        response.setContentType("application/json");
-
-        response.getWriter().write(mapper.writeValueAsString(weather));
+        response.setContentType("text/plain");
+        response.getWriter()
+                .write("Total Assets : " + service.getAssetCount());
     }
 }
