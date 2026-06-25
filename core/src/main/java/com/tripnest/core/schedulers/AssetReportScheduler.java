@@ -34,7 +34,7 @@ public class AssetReportScheduler implements Runnable {
     @Modified
     protected void activate(AssetReportConfiguration config) {
         enabled = config.enabled();
-        addScheduler();
+        // addScheduler();
         removeScheduler();
         LOG.info("AssetReportScheduler Activated");
     }
