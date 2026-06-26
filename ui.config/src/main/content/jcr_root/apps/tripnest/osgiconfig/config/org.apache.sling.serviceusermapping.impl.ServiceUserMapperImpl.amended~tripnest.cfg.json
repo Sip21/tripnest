@@ -1,5 +1,6 @@
 {
     "user.mapping": [
-        "tripnest.core:tripnest-subservice=tripnest-service-user"
+        "tripnest.core:tripnest-subservice=tripnest-service-user",
+        "tripnest.core:workflow-service=tripnest-workflow-service"
     ]
 }
