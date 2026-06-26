@@ -5,6 +5,8 @@
         "create path (nt:unstructured) /content/dam/tripnest/jcr:content",
         "set properties on /content/dam/tripnest/jcr:content\n  set cq:conf{String} to /conf/tripnest\n  set jcr:title{String} to \"TripNest\"\nend",
         "create service user tripnest-service-user with path system/tripnest",
-        "set ACL for tripnest-service-user\n allow jcr:read,jcr:write on /content/tripnest\n allow jcr:read,jcr:write on /content/dam/tripnest\n allow jcr:read,jcr:write on /content/cq:tags\n allow jcr:read on /content/wknd\nend"
+        "set ACL for tripnest-service-user\n allow jcr:read,jcr:write on /content/tripnest\n allow jcr:read,jcr:write on /content/dam/tripnest\n allow jcr:read,jcr:write on /content/cq:tags\n allow jcr:read on /content/wknd\nend",
+        "create service user tripnest-workflow-service",
+        "set ACL for tripnest-workflow-service\nallow jcr:read on /content/dam\nallow jcr:read,jcr:write on /var/workflow\nend"
     ]
 }
