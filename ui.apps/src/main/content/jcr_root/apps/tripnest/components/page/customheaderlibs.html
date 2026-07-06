@@ -13,9 +13,15 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
+
+<meta name="urn:adobe:aue:system:aemconnection" content="aem:https://localhost:8443">
+<meta name="urn:adobe:aue:config:service" content="https://localhost:9443">
+
 <sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
     <sly data-sly-call="${clientlib.css @ categories='tripnest.base'}" />
     <sly data-sly-call="${clientlib.css @ categories='tripnest.site'}" />
 </sly>
 
 <sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}" />
+
+<script src="https://universal-editor-service.adobe.io/cors.js" async></script>
