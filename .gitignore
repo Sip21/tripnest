@@ -110,3 +110,4 @@ dispatcher/src/conf.d/variables/default.vars
 
 # AEM / Sling local files
 .slingshot
+ui.config/src/main/content/jcr_root/apps/tripnest/osgiconfig/config/com.tripnest.core.services.impl.OtpProviderServiceImpl.cfg.json
