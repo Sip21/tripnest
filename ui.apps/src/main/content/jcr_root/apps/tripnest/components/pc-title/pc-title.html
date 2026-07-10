@@ -38,3 +38,12 @@
     <p> 5. ${model.details.valueMap}</p>
     <p> 6. ${model.details.resourceType}</p>
 </sly>
+<sly data-sly-use.localeModel="com.tripnest.core.models.PageLocaleModel" />
+<div>
+    Current Language : ${localeModel.language}
+</div>
+
+<button>${'Book Now' @ i18n}</button>
+
+<sly data-sly-use.i18nModel="com.tripnest.core.models.I18nModel" />
+<button>${i18nModel.placeOrder}</button>
